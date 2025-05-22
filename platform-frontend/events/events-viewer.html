@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events Viewer - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../events/events-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Viewer</a>
+        <a href="../events/events-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Editor</a>
+        <a href="../events/events-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-4 text-blue-900">Events Viewer</h1>
+
+      <!-- Filters -->
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <input type="text" placeholder="Event Tag" class="border p-2 rounded" />
+        <input type="text" placeholder="Event Source" class="border p-2 rounded" />
+        <input type="datetime-local" class="border p-2 rounded" />
+        <select class="border p-2 rounded">
+          <option>Importance</option>
+          <option>Info</option>
+          <option>Warning</option>
+          <option>Critical</option>
+        </select>
+      </div>
+
+      <!-- Chart -->
+      <div class="mb-6">
+        <img src="event_density_plot.png" alt="Event Density Plot" class="rounded border" />
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white shadow rounded">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Event ID</th>
+              <th class="px-4 py-2 text-left">Time</th>
+              <th class="px-4 py-2 text-left">Type</th>
+              <th class="px-4 py-2 text-left">Device</th>
+              <th class="px-4 py-2 text-left">Summary</th>
+              <th class="px-4 py-2 text-left">Severity</th>
+              <th class="px-4 py-2 text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="px-4 py-2">EVT-1224</td>
+              <td class="px-4 py-2">08:42:11</td>
+              <td class="px-4 py-2">Interface Down</td>
+              <td class="px-4 py-2">edge-sw01</td>
+              <td class="px-4 py-2">Port 3 link lost for >30s</td>
+              <td class="px-4 py-2 text-red-600">Critical</td>
+              <td class="px-4 py-2 text-yellow-600">Open</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Selected Event Detail -->
+      <div class="mt-6 bg-white border rounded p-4 shadow">
+        <h2 class="text-md font-semibold text-blue-800 mb-2">Selected Event Details</h2>
+        <pre class="text-sm text-gray-800">
+Event ID: EVT-1224
+Time: 08:42:11
+Type: Interface Down
+Device: edge-sw01
+Severity: Critical
+Status: Open
+Summary: Port 3 link lost for >30 seconds on uplink interface.
+Triggered by: SNMP Trap from switch
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

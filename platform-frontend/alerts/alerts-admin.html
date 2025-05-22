@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alerts Admin - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../alerts/alerts-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Alerts Viewer</a>
+        <a href="../alerts/alerts-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Alerts Editor</a>
+        <a href="../alerts/alerts-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Alerts Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Alerts Admin</h1>
+
+      <form class="space-y-6">
+        <!-- Escalation Rules -->
+        <div class="bg-white p-4 border rounded shadow">
+          <h2 class="text-lg font-semibold mb-4 text-blue-800">Escalation Rules</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 font-medium">Escalate if Unacknowledged (min)</label>
+              <input type="number" value="10" class="w-full p-2 border rounded" />
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Escalation Target</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="e.g. ops-lead@example.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Suppression Controls -->
+        <div class="bg-white p-4 border rounded shadow">
+          <h2 class="text-lg font-semibold mb-4 text-blue-800">Suppression Rules</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 font-medium">Suppress Alerts Matching</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="e.g. log match text, tag" />
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">For Duration (min)</label>
+              <input type="number" value="60" class="w-full p-2 border rounded" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Retention Settings -->
+        <div class="bg-white p-4 border rounded shadow">
+          <h2 class="text-lg font-semibold mb-4 text-blue-800">Alert Retention</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 font-medium">Retain Critical</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Retain Warning</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Retain Info</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex space-x-4">
+          <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Save Settings</button>
+          <button class="bg-yellow-600 text-white px-5 py-2 rounded hover:bg-yellow-700">Run Cleanup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

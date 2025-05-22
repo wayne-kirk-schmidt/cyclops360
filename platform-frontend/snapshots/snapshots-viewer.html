@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snapshots Viewer - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../snapshots/snapshots-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Viewer</a>
+        <a href="../snapshots/snapshots-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Editor</a>
+        <a href="../snapshots/snapshots-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Snapshots Viewer</h1>
+
+      <!-- Filters -->
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <input type="text" placeholder="Snapshot Name" class="border p-2 rounded" />
+        <input type="text" placeholder="Device / Group" class="border p-2 rounded" />
+        <input type="datetime-local" class="border p-2 rounded" />
+        <select class="border p-2 rounded">
+          <option>Snapshot Type</option>
+          <option>Configuration</option>
+          <option>Topology</option>
+          <option>Health</option>
+        </select>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white shadow rounded">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Snapshot ID</th>
+              <th class="px-4 py-2 text-left">Name</th>
+              <th class="px-4 py-2 text-left">Type</th>
+              <th class="px-4 py-2 text-left">Captured For</th>
+              <th class="px-4 py-2 text-left">Time</th>
+              <th class="px-4 py-2 text-left">Status</th>
+              <th class="px-4 py-2 text-left">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="px-4 py-2">SS-1001</td>
+              <td class="px-4 py-2">Topology Snapshot AM</td>
+              <td class="px-4 py-2">Topology</td>
+              <td class="px-4 py-2">Core Network</td>
+              <td class="px-4 py-2">2025-05-21 07:45</td>
+              <td class="px-4 py-2 text-green-700">Complete</td>
+              <td class="px-4 py-2 space-x-2">
+                <button class="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">View</button>
+                <button class="px-3 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700">Compare</button>
+                <button class="px-3 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700">Explore</button>
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="px-4 py-2">SS-1002</td>
+              <td class="px-4 py-2">Config Snapshot Update</td>
+              <td class="px-4 py-2">Configuration</td>
+              <td class="px-4 py-2">srv-web02</td>
+              <td class="px-4 py-2">2025-05-21 08:10</td>
+              <td class="px-4 py-2 text-yellow-700">Pending</td>
+              <td class="px-4 py-2 space-x-2">
+                <button class="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">View</button>
+                <button class="px-3 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700">Compare</button>
+                <button class="px-3 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700">Explore</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events Editor - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../events/events-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Viewer</a>
+        <a href="../events/events-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Editor</a>
+        <a href="../events/events-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Events Editor</h1>
+
+      <form class="space-y-6">
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block font-medium mb-1">Event Type</label>
+            <select class="w-full p-2 border rounded">
+              <option>Interface Down</option>
+              <option>Config Change</option>
+              <option>Manual Note</option>
+              <option>System Reboot</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Event Tag</label>
+            <input type="text" class="w-full p-2 border rounded" placeholder="e.g. network, security" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block font-medium mb-1">Device Name</label>
+            <input type="text" class="w-full p-2 border rounded" placeholder="e.g. edge-sw01" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Event Source</label>
+            <input type="text" class="w-full p-2 border rounded" placeholder="e.g. SNMP, Manual, Agent" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block font-medium mb-1">Severity</label>
+            <select class="w-full p-2 border rounded">
+              <option>Info</option>
+              <option>Warning</option>
+              <option>Critical</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Status</label>
+            <select class="w-full p-2 border rounded">
+              <option>Open</option>
+              <option>In Progress</option>
+              <option>Closed</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Timestamp</label>
+          <input type="datetime-local" class="w-full p-2 border rounded" />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Summary</label>
+          <input type="text" class="w-full p-2 border rounded" placeholder="e.g. Interface eth0 went down unexpectedly." />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Details</label>
+          <textarea rows="6" class="w-full p-3 border rounded font-mono bg-gray-100" placeholder="Provide a detailed description of the event. Include context, resolution steps, or logs if needed."></textarea>
+        </div>
+
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Save</button>
+          <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Update</button>
+          <button class="bg-gray-400 text-white px-5 py-2 rounded hover:bg-gray-500">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

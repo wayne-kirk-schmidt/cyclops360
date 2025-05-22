@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Response Viewer - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../response/response-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Viewer</a>
+        <a href="../response/response-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Editor</a>
+        <a href="../response/response-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Response Viewer</h1>
+
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <input type="text" placeholder="Device Name" class="border p-2 rounded" />
+        <input type="text" placeholder="Tag" class="border p-2 rounded" />
+        <input type="text" placeholder="Playbook or Command" class="border p-2 rounded" />
+        <select class="border p-2 rounded">
+          <option>Status</option>
+          <option>Success</option>
+          <option>Pending</option>
+          <option>Failed</option>
+        </select>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white shadow rounded">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Response ID</th>
+              <th class="px-4 py-2 text-left">Playbook/Command</th>
+              <th class="px-4 py-2 text-left">Target</th>
+              <th class="px-4 py-2 text-left">Status</th>
+              <th class="px-4 py-2 text-left">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="px-4 py-2">RSP-1001</td>
+              <td class="px-4 py-2">Restart Web Service</td>
+              <td class="px-4 py-2">srv-web01</td>
+              <td class="px-4 py-2 text-green-600">Success</td>
+              <td class="px-4 py-2">2025-05-21 08:30</td>
+            </tr>
+            <tr class="border-t">
+              <td class="px-4 py-2">RSP-1002</td>
+              <td class="px-4 py-2">clear dns cache</td>
+              <td class="px-4 py-2">proxy01</td>
+              <td class="px-4 py-2 text-yellow-600">Pending</td>
+              <td class="px-4 py-2">2025-05-21 08:40</td>
+            </tr>
+            <tr class="border-t">
+              <td class="px-4 py-2">RSP-1003</td>
+              <td class="px-4 py-2">patch update</td>
+              <td class="px-4 py-2">vpn-node</td>
+              <td class="px-4 py-2 text-red-600">Failed</td>
+              <td class="px-4 py-2">2025-05-21 08:45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Error Reason Box for RSP-1003 -->
+      <div class="mt-6 p-4 border border-red-300 bg-red-50 text-red-800 rounded">
+        <h2 class="text-md font-semibold mb-2">Failure Reason - RSP-1003</h2>
+        <pre class="text-sm whitespace-pre-wrap">Permission denied when trying to connect to vpn-node via SSH.
+Ensure correct credentials and access permissions are configured.</pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMDB Viewer - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../cmdb/cmdb-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">CMDB Viewer</a>
+        <a href="../cmdb/cmdb-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">CMDB Editor</a>
+        <a href="../cmdb/cmdb-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">CMDB Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">CMDB Viewer</h1>
+
+      <!-- Filter Section -->
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <select class="border p-2 rounded"><option>Device Name</option></select>
+        <select class="border p-2 rounded"><option>Device Owner</option></select>
+        <select class="border p-2 rounded"><option>Device Status</option></select>
+        <select class="border p-2 rounded"><option>Device Role</option></select>
+        <select class="border p-2 rounded"><option>Device Tags</option></select>
+        <select class="border p-2 rounded"><option>Device Location</option></select>
+      </div>
+
+      <!-- Device Table and Graph -->
+      <div class="flex gap-6">
+        <!-- Device Table -->
+        <div class="w-2/3 overflow-x-auto">
+          <table class="w-full text-sm bg-white shadow rounded">
+            <thead class="bg-blue-100">
+              <tr>
+                <th class="px-4 py-2 text-left">Device Name</th>
+                <th class="px-4 py-2 text-left">Health</th>
+                <th class="px-4 py-2 text-left">Incidents</th>
+                <th class="px-4 py-2 text-left">Changes</th>
+                <th class="px-4 py-2 text-left">Stability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t"><td class="px-4 py-2">fw-core</td><td class="px-4 py-2 text-green-600">9</td><td class="px-4 py-2">2</td><td class="px-4 py-2">5</td><td class="px-4 py-2">98%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">sw-edge</td><td class="px-4 py-2 text-yellow-600">6</td><td class="px-4 py-2">4</td><td class="px-4 py-2">7</td><td class="px-4 py-2">92%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">srv-web01</td><td class="px-4 py-2 text-green-600">10</td><td class="px-4 py-2">0</td><td class="px-4 py-2">3</td><td class="px-4 py-2">99%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">db-node1</td><td class="px-4 py-2 text-red-600">2</td><td class="px-4 py-2">12</td><td class="px-4 py-2">15</td><td class="px-4 py-2">67%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">load-bal-1</td><td class="px-4 py-2 text-green-600">8</td><td class="px-4 py-2">1</td><td class="px-4 py-2">2</td><td class="px-4 py-2">97%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">vpn-gw</td><td class="px-4 py-2 text-yellow-600">5</td><td class="px-4 py-2">6</td><td class="px-4 py-2">9</td><td class="px-4 py-2">85%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">printer-3f</td><td class="px-4 py-2 text-red-600">3</td><td class="px-4 py-2">7</td><td class="px-4 py-2">8</td><td class="px-4 py-2">70%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">sec-proxy</td><td class="px-4 py-2 text-green-600">9</td><td class="px-4 py-2">1</td><td class="px-4 py-2">4</td><td class="px-4 py-2">95%</td></tr>
+              <tr class="border-t"><td class="px-4 py-2">mail-relay</td><td class="px-4 py-2 text-yellow-600">4</td><td class="px-4 py-2">5</td><td class="px-4 py-2">11</td><td class="px-4 py-2">80%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dependency Graph Placeholder -->
+        <div class="w-1/3 bg-white shadow rounded p-4">
+          <h2 class="text-md font-semibold mb-2 text-blue-800">Dependencies (Selected: fw-core)</h2>
+          <img src="../images/dependencies-graph.png" alt="Device Dependencies Graph" class="w-full h-64 object-contain rounded border border-gray-300" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

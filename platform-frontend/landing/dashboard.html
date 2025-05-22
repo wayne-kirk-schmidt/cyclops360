@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyclOps360 Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left">
+        <a href="./dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../alerts/alerts-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Alerts</a>
+        <a href="../automation/automation-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Automation</a>
+        <a href="../cmdb/cmdb-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">CMDB</a>
+        <a href="../discovery/discovery-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery</a>
+        <a href="../events/events-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Events</a>
+        <a href="../response/response-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response</a>
+        <a href="../snapshots/snapshots-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots</a>
+        <a href="../topology/topology-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Topology</a>
+        <a href="./settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="./contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="./signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>
+      </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">System Dashboard</h1>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="bg-white shadow rounded p-4">
+          <h2 class="text-sm text-gray-600">Devices Discovered</h2>
+          <p class="text-2xl font-semibold">128</p>
+        </div>
+        <div class="bg-white shadow rounded p-4">
+          <h2 class="text-sm text-gray-600">Alerts Today</h2>
+          <p class="text-2xl font-semibold">6</p>
+        </div>
+        <div class="bg-white shadow rounded p-4">
+          <h2 class="text-sm text-gray-600">Changes Verified</h2>
+          <p class="text-2xl font-semibold">14</p>
+        </div>
+        <div class="bg-white shadow rounded p-4">
+          <h2 class="text-sm text-gray-600">Pending Snapshots</h2>
+          <p class="text-2xl font-semibold">3</p>
+        </div>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4">Recent Activity</h2>
+      <table class="w-full bg-white shadow rounded text-sm">
+        <thead class="bg-blue-100 text-left">
+          <tr>
+            <th class="px-4 py-2">Time</th>
+            <th class="px-4 py-2">Action</th>
+            <th class="px-4 py-2">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t">
+            <td class="px-4 py-2">09:15</td>
+            <td class="px-4 py-2">Snapshot created</td>
+            <td class="px-4 py-2 text-green-600">Success</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-4 py-2">08:45</td>
+            <td class="px-4 py-2">Alert resolved</td>
+            <td class="px-4 py-2 text-yellow-600">Warning</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-4 py-2">08:12</td>
+            <td class="px-4 py-2">Device added</td>
+            <td class="px-4 py-2 text-green-600">Success</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

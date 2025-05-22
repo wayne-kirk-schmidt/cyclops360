@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discovery Viewer - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../discovery/discovery-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Viewer</a>
+        <a href="../discovery/discovery-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Editor</a>
+        <a href="../discovery/discovery-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-4 text-blue-900">Discovery Viewer</h1>
+
+      <!-- Toggle View Links -->
+      <div class="mb-6 space-x-4">
+        <a href="/discovery/viewer" class="px-4 py-2 bg-blue-600 text-white rounded">Viewer</a>
+        <a href="/discovery/editor" class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50">Editor</a>
+        <a href="/discovery/admin" class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50">Admin</a>
+      </div>
+
+      
+      <!-- Search Bar -->
+      <div class="mb-6 grid grid-cols-3 gap-4">
+        <div>
+          <label class="block font-medium mb-1 text-sm">Tag Name</label>
+          <input type="text" class="w-full px-3 py-2 border rounded" placeholder="e.g. Router-01" />
+        </div>
+        <div>
+          <label class="block font-medium mb-1 text-sm">Date & Time</label>
+          <input type="datetime-local" class="w-full px-3 py-2 border rounded" />
+        </div>
+        <div>
+          <label class="block font-medium mb-1 text-sm">Location</label>
+          <input type="text" class="w-full px-3 py-2 border rounded" placeholder="e.g. Tokyo DC" />
+        </div>
+      </div>
+
+<!-- Editable Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white shadow rounded">
+          <thead class="bg-blue-100 text-left">
+            <tr>
+              <th class="px-4 py-2">Device</th>
+              <th class="px-4 py-2">Status</th>
+              <th class="px-4 py-2">Notes</th>
+              <th class="px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="px-4 py-2"><input type="text" value="sw-core-1" class="border px-2 py-1 rounded w-full" /></td>
+              <td class="px-4 py-2">
+                <select class="border px-2 py-1 rounded w-full">
+                  <option>Online</option>
+                  <option>Offline</option>
+                  <option>Warning</option>
+                </select>
+              </td>
+              <td class="px-4 py-2"><input type="text" value="Core switch in datacenter" class="border px-2 py-1 rounded w-full" /></td>
+              <td class="px-4 py-2"><button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Save</button></td>
+            </tr>
+            <tr class="border-t">
+              <td class="px-4 py-2"><input type="text" value="ap-east01" class="border px-2 py-1 rounded w-full" /></td>
+              <td class="px-4 py-2">
+                <select class="border px-2 py-1 rounded w-full">
+                  <option>Online</option>
+                  <option>Offline</option>
+                  <option>Warning</option>
+                </select>
+              </td>
+              <td class="px-4 py-2"><input type="text" value="AP in east wing" class="border px-2 py-1 rounded w-full" /></td>
+              <td class="px-4 py-2"><button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Save</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-6 space-x-4">
+        <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Discover</button>
+        <button class="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700">Access</button>
+      </div>
+
+      
+      <div class="mt-6">
+        <span class="font-medium text-gray-700 mr-4">View mode:</span>
+        <label class="mr-4"><input type="radio" name="viewMode" checked class="mr-1">Table</label>
+        <label class="mr-4"><input type="radio" name="viewMode" class="mr-1">Map</label>
+        <label><input type="radio" name="viewMode" class="mr-1">Graph</label>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
