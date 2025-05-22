@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discovery Editor - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../discovery/discovery-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Viewer</a>
+        <a href="../discovery/discovery-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Editor</a>
+        <a href="../discovery/discovery-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Discovery Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-4 text-blue-900">Discovery Editor</h1>
+
+      <!-- Toggle View Links -->
+      <div class="mb-6 space-x-4">
+        <a href="/discovery/viewer" class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50">Viewer</a>
+        <a href="/discovery/editor" class="px-4 py-2 bg-blue-600 text-white rounded">Editor</a>
+        <a href="/discovery/admin" class="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50">Admin</a>
+      </div>
+
+      <!-- Detailed Device Fields -->
+      <div class="space-y-4 text-sm">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Device Name</label>
+            <input type="text" value="sw-core-1" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Device Role</label>
+            <input type="text" value="Switch" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Owner Name</label>
+            <input type="text" value="Jane Doe" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Owner Contact Email</label>
+            <input type="email" value="jane.doe@example.com" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Owner Group</label>
+            <input type="text" value="Network Ops" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Group Contact Email</label>
+            <input type="email" value="netops@example.com" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Business ID</label>
+            <input type="text" value="BIZ123" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Group ID</label>
+            <input type="text" value="GRP456" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Device Vendor</label>
+            <input type="text" value="Cisco" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Device Type</label>
+            <input type="text" value="C3924" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Device Serial ID</label>
+            <input type="text" value="SN-99887766" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Device SKU</label>
+            <input type="text" value="SKU-83921" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium mb-1">Device OS</label>
+            <input type="text" value="IOS19.8.5" class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Device Features</label>
+            <input type="text" value="Security, Proxy, BGP" class="w-full px-3 py-2 border rounded" />
+          </div>
+        </div>
+
+        <div class="mt-6 space-x-4">
+          <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Save Changes</button>
+          <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Discover</button>
+          <button class="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700">Access</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

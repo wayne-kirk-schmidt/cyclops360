@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Response Admin - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../response/response-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Viewer</a>
+        <a href="../response/response-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Editor</a>
+        <a href="../response/response-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Response Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Response Admin</h1>
+
+      <form class="space-y-6">
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block font-medium mb-1">Access Method</label>
+            <select class="w-full p-2 border rounded">
+              <option>SSH</option>
+              <option>WinRM</option>
+              <option>API</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Response Type</label>
+            <select class="w-full p-2 border rounded">
+              <option>Bash</option>
+              <option>PowerShell</option>
+              <option>Python</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block font-medium mb-1">Credential User</label>
+            <input type="text" value="response-bot" class="w-full p-2 border rounded" />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Credential String</label>
+            <input type="password" value="*********************" class="w-full p-2 border rounded" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Response Commands</label>
+          <textarea rows="8" class="w-full p-3 border rounded font-mono bg-gray-100" placeholder="e.g. systemctl restart nginx"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Playbook Listing</label>
+          <input type="text" class="w-full p-2 border rounded" placeholder="e.g. restart-service, notify-ops" />
+        </div>
+
+        <div>
+          <label class="inline-flex items-center space-x-2">
+            <input type="checkbox" checked class="form-checkbox h-4 w-4 text-blue-600" />
+            <span class="font-medium">Exit on Error</span>
+          </label>
+        </div>
+
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Save</button>
+          <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Apply</button>
+          <button class="bg-yellow-600 text-white px-5 py-2 rounded hover:bg-yellow-700">Test</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

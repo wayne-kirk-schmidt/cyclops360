@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automation Editor - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../automation/automation-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Automation Viewer</a>
+        <a href="../automation/automation-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Automation Editor</a>
+        <a href="../automation/automation-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Automation Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Automation Editor</h1>
+
+      <!-- Search Filters -->
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <input type="text" placeholder="Device Name" class="border p-2 rounded" />
+        <input type="text" placeholder="Device Tag" class="border p-2 rounded" />
+        <input type="text" placeholder="Playbook Name" class="border p-2 rounded" />
+        <input type="text" placeholder="Playbook Tag" class="border p-2 rounded" />
+      </div>
+
+      <!-- Playbook & Group Selection -->
+      <div class="grid grid-cols-2 gap-6 mb-8">
+        <div>
+          <label class="block font-medium mb-2">Select Playbook</label>
+          <select class="w-full p-2 border rounded">
+            <option>Check Disk Space</option>
+            <option>Restart Web Service</option>
+            <option selected>Patch Security Updates</option>
+            <option>Cleanup Temp Files</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-medium mb-2">Assign to Group</label>
+          <input type="text" placeholder="e.g. NetOps" value="web-group" class="w-full p-2 border rounded" />
+        </div>
+      </div>
+
+      <!-- Assigned Devices Table -->
+      <div class="mt-6">
+        <h2 class="text-lg font-semibold mb-3 text-blue-800">Devices in Group: web-group</h2>
+        <table class="w-full text-sm bg-white shadow rounded">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Group Name</th>
+              <th class="px-4 py-2 text-left">Device Name</th>
+              <th class="px-4 py-2 text-left">Assigned Playbooks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">web-group</td>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">fw-core</td><td class="px-4 py-2">Patch Security Updates</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">sw-edge</td><td class="px-4 py-2">Patch Security Updates, Cleanup Temp Files</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">db-main</td><td class="px-4 py-2">Patch Security Updates, Restart Web Service</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">vpn-node</td><td class="px-4 py-2">Patch Security Updates</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">proxy01</td><td class="px-4 py-2">Patch Security Updates, Check Disk Space</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">web-group</td><td class="px-4 py-2">sec-proxy</td><td class="px-4 py-2">Patch Security Updates</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8">
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Assign Playbook to Group</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

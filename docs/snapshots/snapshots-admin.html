@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snapshots Admin - CyclOps360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-blue-100 p-4 flex flex-col items-center">
+      <img src="../images/logo.png" alt="CyclOps360 Logo" class="w-24 mb-6" />
+      <nav class="w-full space-y-2 text-left font-medium">
+        <a href="../landing/dashboard.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Dashboard</a>
+        <a href="../snapshots/snapshots-viewer.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Viewer</a>
+        <a href="../snapshots/snapshots-editor.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Editor</a>
+        <a href="../snapshots/snapshots-admin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Snapshots Admin</a>
+        <a href="../landing/settings.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Settings</a>
+        <a href="../landing/contact.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Contact Us</a>	
+        <a href="../landing/signin.html" class="block py-2 px-4 hover:bg-blue-200 rounded">Sign Out</a>      
+	  </nav>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="w-4/5 p-8">
+      <h1 class="text-2xl font-bold mb-6 text-blue-900">Snapshots Admin</h1>
+
+      <form class="space-y-6">
+        <!-- Retention Settings -->
+        <div class="bg-white p-4 border rounded shadow">
+          <h2 class="text-lg font-semibold mb-4 text-blue-800">Snapshot Retention</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 font-medium">Retain Config Snapshots</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Retain Topology Snapshots</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Retain Health Snapshots</label>
+              <select class="w-full p-2 border rounded">
+                <option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Export Settings -->
+        <div class="bg-white p-4 border rounded shadow">
+          <h2 class="text-lg font-semibold mb-4 text-blue-800">Snapshot Export</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 font-medium">Export Path</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="/exports/snapshots/" />
+            </div>
+            <div>
+              <label class="block mb-1 font-medium">Export Format</label>
+              <select class="w-full p-2 border rounded">
+                <option>JSON</option><option>XML</option><option>YAML</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="inline-flex items-center space-x-2">
+              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600" />
+              <span class="font-medium">Enable Auto Export on Capture</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex space-x-4">
+          <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Save Settings</button>
+          <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Export Now</button>
+          <button class="bg-yellow-600 text-white px-5 py-2 rounded hover:bg-yellow-700">Cleanup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
