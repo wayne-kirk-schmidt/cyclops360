@@ -19,6 +19,5 @@ This directory contains the backend services for Cyclops360, including APIs, dat
 - [README.md](./platform-backend/README.md)
 - [docker-compose.yml](./platform-backend/docker-compose.yml)
 
----
-
-For more details on each module, refer to the respective subdirectories and their accompanying documentation (if present).
+### [Platform Frontend](./platform-frontend)
+- [index.html](./platform-frontend/index.html)
